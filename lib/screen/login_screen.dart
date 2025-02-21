@@ -11,7 +11,7 @@ class loginScreen extends StatelessWidget {
         appBar: AppBar(
           title: Image.asset(Constants.logoPath,
           height: 40,
-          alignment: Alignment.center,),
+          alignment: Alignment.centerLeft, ),
            actions: [
              TextButton(onPressed: () {}, child: const Text('Skip',
              style:TextStyle(
