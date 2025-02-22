@@ -1,10 +1,11 @@
-import 'package:firebase_core/firebase_core.dart';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:reddit_clone/core/provider/firebase_provider.dart';
 
-final authRepositoryProvider=Provider((ref) =>AuthRepository(firestore: firestore, auth: auth, googleSignIn: googleSignIn));
+final authRepositoryProvider=Provider((ref) =>AuthRepository(firestore:ref.read(firestoreProvider), auth: ref.read(authProvider), googleSignIn:ref.read(googleSiginProvider),),);
 
 class AuthRepository {
   final FirebaseFirestore _firestore;
